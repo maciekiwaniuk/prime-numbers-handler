@@ -42,19 +42,19 @@ namespace prime_numbers_handler
                 {
                     case true:
                         {
-                            resultTextBlock.Text = $"Liczba {checkedNumber} jest liczbą pierwszą";
+                            resultTextBlock.Text = $"The number {checkedNumber} is prime number.";
                         }
                         break;
                     case false:
                         {
-                            resultTextBlock.Text = $"Liczba {checkedNumber} nie jest liczbą pierwszą";
+                            resultTextBlock.Text = $"The number {checkedNumber} is not prime number.";
                         }
                         break;
                 }
             }
             catch (Exception)
             {
-                resultTextBlock.Text = "Coś poszło nie tak... Proszę podać poprawną liczbę.";
+                resultTextBlock.Text = "Oops, something went wrong... Please enter a valid number.";
             }
                 
         }
@@ -75,7 +75,7 @@ namespace prime_numbers_handler
             }
             catch (Exception)
             {
-                resultTextBlock.Text = "Coś poszło nie tak... Proszę podać poprawną liczbę.";
+                resultTextBlock.Text = "Oops, something went wrong... Please enter a valid number.";
                 return;
             }
 
@@ -83,14 +83,14 @@ namespace prime_numbers_handler
 
             if (Helper.isPrimeNumber(checkedNumber))
             {
-                resultTextBlock.Text = "Podana liczba jest liczbą pierwszą. Nie da się jej rozłożyć na czynniki pierwsze.";
+                resultTextBlock.Text = "The given number is a prime number. It cannot be broken down into prime factors.";
                 return;
             }
 
 
             List<int> primeFactorNumbersList = Helper.spreadPrimeFactors(checkedNumber);
 
-            string resultString = $"Czynniki pierwsze liczby {checkedNumber} to: ";
+            string resultString = $"The prime factors of {checkedNumber} are: ";
 
             for (int i = 0; i < primeFactorNumbersList.Count; i++)
             {
@@ -114,13 +114,13 @@ namespace prime_numbers_handler
             {
                 if (Helper.isCorrectRange(numberTextBox.Text) == false)
                 {
-                    resultTextBlock.Text = "Podany zakres liczb był niepoprawny.";
+                    resultTextBlock.Text = "The specified range of numbers was invalid.";
                     return;
                 }
             }
             catch (Exception)
             {
-                resultTextBlock.Text = "Coś poszło nie tak... Proszę podać poprawny zakres.";
+                resultTextBlock.Text = "Oops, something went wrong... Please enter a valid number.";
                 return;
             }
 
@@ -130,7 +130,7 @@ namespace prime_numbers_handler
             int rangeFrom = rangeFromToList[0];
             int rangeTo = rangeFromToList[1];
 
-            string resultString = $"Liczby pierwsze z przedziału {rangeFrom} - {rangeTo}: ";
+            string resultString = $"The prime numbers between {rangeFrom} - {rangeTo} are: ";
 
             for (int i = 0; i < primeNumbersFromRange.Count; i++)
             {
@@ -153,13 +153,13 @@ namespace prime_numbers_handler
             {
                 if (Helper.isCorrectRange(numberTextBox.Text) == false)
                 {
-                    resultTextBlock.Text = "Podany zakres liczb był niepoprawny.";
+                    resultTextBlock.Text = "The specified range of numbers was invalid.";
                     return;
                 }
             }
             catch (Exception)
             {
-                resultTextBlock.Text = "Coś poszło nie tak... Proszę podać poprawny zakres.";
+                resultTextBlock.Text = "Oops, something went wrong... Please enter a valid range.";
                 return;
             }
 
@@ -169,7 +169,7 @@ namespace prime_numbers_handler
             int rangeFrom = rangeFromToList[0];
             int rangeTo = rangeFromToList[1];
 
-            string resultString = $"Wylosowana liczba pierwsza z przedziału {rangeFrom} - {rangeTo} to ";
+            string resultString = $"The drawn prime number between {rangeFrom} - {rangeTo} is ";
             Random random = new Random();
             int randomIndex = random.Next(primeNumbersFromRange.Count);
             resultString += $"{primeNumbersFromRange[randomIndex]}.";
