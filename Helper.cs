@@ -66,10 +66,8 @@ namespace prime_numbers_handler
                 int rangeNumber = Convert.ToInt32(range);
                 return true;
             }
-            catch (Exception)
-            {
-                return false;
-            }
+            catch (Exception) { }
+            
 
             try
             {
@@ -77,6 +75,11 @@ namespace prime_numbers_handler
 
                 int rangeFrom = Convert.ToInt32(numbers[0]);
                 int rangeTo = Convert.ToInt32(numbers[1]);
+
+                if (rangeFrom < 2)
+                {
+                    return false;
+                }
 
                 if (rangeTo > rangeFrom)
                 {
