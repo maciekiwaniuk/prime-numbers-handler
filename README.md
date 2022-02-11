@@ -7,15 +7,5 @@
 
 # Application usage
 
-The application allows several actions. The first action allows to check whether the number is prime.
-The second action allows you to divide a number that is not prime into prime factors.
-    
-    For example given number 57 is divided into the following prime factors: 3 and 19
-    
-The third action prints out all the prime numbers in the given range
+To use the application, simply type a number or a range of numbers into the text box and click on the option and expect the result displayed in the box. The application supports errors, so if the user provides something that the program is not able to process in the results window he will be informed about it.
 
-    For example given range 3-59 returns: 3, 5, 7, 11, 13, 17, 19
-    
-The fourth action prints out one random prime number in the given range
-
-    For example given range 3-100 returns: 89
